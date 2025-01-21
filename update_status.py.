@@ -1,0 +1,31 @@
+# Текущий статус заметки
+current_status = "в процессе"
+print(f'Текущий статус заметки: "{current_status}"')
+# Предложение выбрать новый статус
+print("Выберите новый статус заметки:")
+print("1. выполнено")
+print("2. в процессе")
+print("3. отложено")
+# Получение выбора пользователя
+user_choice = input("Ваш выбор: ")
+# Обновление статуса на основе выбора
+if user_choice == "1":
+    current_status = "выполнено"
+elif user_choice == "2":
+    current_status = "в процессе"
+elif user_choice == "3":
+    current_status = "отложено"
+else:
+    print("Некорректный ввод. Пожалуйста, выберите число от 1 до 3 ")
+    #Повтор попытки
+    user_choice = input("Ваш выбор: ")
+    if user_choice == "1":
+        current_status = "выполнено"
+    elif user_choice == "2":
+        current_status = "в процессе"
+    elif user_choice == "3":
+        current_status = "отложено"
+    else:#В случае некорректного ввода статус не меняется
+        print("Некорректный ввод. Статус останется прежнем ")
+# Вывод обновленного статуса
+print(f'Статус заметки успешно обновлён на: "{current_status}"')
