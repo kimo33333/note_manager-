@@ -1,0 +1,16 @@
+from datetime import datetime
+# Текущая дата
+current_date = datetime.now()
+# Запрашиваем дату дедлайна
+date_input = input("Дату дедлайна напиши (день-месяц-год): ")
+try:
+    # Из строки в дату
+    issue_date = datetime.strptime(date_input, "%d-%m-%Y")
+    # Сравниваем даты
+    if issue_date < current_date:
+        print("Дедлайн истёк!")
+    else:
+        remaining_days = (issue_date - current_date).days
+        print(f"До конца срока осталось {remaining_days} дней.")
+except ValueError:
+    print("Неверный формат даты. Используй: день-месяц-год.")
