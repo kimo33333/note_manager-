@@ -1,0 +1,38 @@
+def display_notes(notes):
+    if not notes:  # Проверка на пустой список
+        print("У вас нет сохранённых заметок.")
+        return
+    print("Список заметок:")
+    print("------------------------------")
+    for index, note in enumerate(notes, start=1):
+        print(f"Заметка №{index}:")
+        print(f"Имя пользователя: {note.get('username', 'Не указано')}")
+        print(f"Заголовок: {note.get('title', 'Не указано')}")
+        print(f"Описание: {note.get('content', 'Не указано')}")
+        print(f"Статус: {note.get('status', 'Не указано')}")
+        print(f"Дата создания: {note.get('created_date', 'Не указано')}")
+        print(f"Дедлайн: {note.get('issue_date', 'Не указано')}")
+        print("------------------------------")
+# Пример использования функции
+notes = [
+    {
+        'username': 'Алексей',
+        'title': 'Список покупок',
+        'content': 'Купить продукты на неделю',
+        'status': 'новая',
+        'created_date': '27-11-2024',
+        'issue_date': '30-11-2024'
+    },
+    {
+        'username': 'Мария',
+        'title': 'Учеба',
+        'content': 'Подготовиться к экзамену',
+        'status': 'в процессе',
+        'created_date': '25-11-2024',
+        'issue_date': '01-12-2024'
+    }
+]
+# Вызов функции для отображения заметок
+display_notes(notes)
+# Вызов функции для пустого списка заметок
+display_notes([])
